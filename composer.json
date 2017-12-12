@@ -17,7 +17,6 @@
         "illuminate/validation": "~5.5"
     },
     "require-dev": {
-        "mockery/mockery": "^1.0",
         "orchestra/testbench": "^3.5",
         "phpunit/phpunit": "~6.0"
     },
