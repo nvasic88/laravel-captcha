@@ -149,31 +149,28 @@ class ImageGenerator
         $x = 10;
         $y = round($height * 27 / 40);
 
+        $draw->setFillColor($textColor);
+
         for ($i = 0; $i < $length; ++$i) {
-            $draw = new \ImagickDraw();
-            $draw->setFont($this->getFontFile());
             $draw->setFontSize((int) (mt_rand(26, 32) * $scale * 0.8));
-            $draw->setFillColor($textColor);
             $image->annotateImage($draw, $x, $y, mt_rand(-10, 10), $code[$i]);
             $fontMetrics = $image->queryFontMetrics($draw, $code[$i]);
             $x += (int) $fontMetrics['textWidth'] + $offset;
         }
 
-        $distorsion = new \ImagickDraw();
-        $distorsion->setFillColor($textColor);
-        $distorsion->setStrokeColor($textColor);
+        $draw->setStrokeColor($textColor);
 
         // Add lines for noise.
         for($i = 0; $i < 10; $i++) {
-            $distorsion->line(0, mt_rand() % $height, $width, mt_rand() % $height);
+            $draw->line(0, mt_rand() % $height, $width, mt_rand() % $height);
         }
 
         // Add dots for noise.
         for($i = 0; $i < $width * $height * 0.4; $i++) {
-            $distorsion->point(mt_rand() % $width, mt_rand() % $height);
+            $draw->point(mt_rand() % $width, mt_rand() % $height);
         }
 
-        $image->drawImage($distorsion);
+        $image->drawImage($draw);
 
         $image->setImageFormat('png');
 
