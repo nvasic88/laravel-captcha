@@ -12,13 +12,9 @@ class CaptchaValidationTest extends IntegrationTest
     /** @test */
     public function can_validate_captcha()
     {
-        $code = Captcha::getVerificationCode();
+        $code = Captcha::code();
 
-        $validator = Validator::make([
-            'captcha' => $code,
-        ], [
-            'captcha' => 'captcha'
-        ]);
+        $validator = Validator::make(['captcha' => $code], ['captcha' => 'captcha']);
 
         $this->assertNotEmpty($code);
         $this->assertTrue($validator->passes());
@@ -27,11 +23,7 @@ class CaptchaValidationTest extends IntegrationTest
     /** @test */
     public function validation_fails_if_invalid_code_is_provided()
     {
-        $validator = Validator::make([
-            'captcha' => 'invalid-code',
-        ], [
-            'captcha' => 'captcha'
-        ]);
+        $validator = Validator::make(['captcha' => 'invalid-code'], ['captcha' => 'captcha']);
 
         $this->assertTrue($validator->fails());
         $this->assertTrue($validator->errors()->has('captcha'));
@@ -42,15 +34,11 @@ class CaptchaValidationTest extends IntegrationTest
     {
         $this->setConfig('case_sensitive', true);
 
-        $code = Captcha::getVerificationCode();
+        $code = Captcha::code();
 
         $try = $this->startsWithUpper($code) ? strtolower($code) : strtoupper($code);
 
-        $validator = Validator::make([
-            'captcha' => $try,
-        ], [
-            'captcha' => 'captcha'
-        ]);
+        $validator = Validator::make(['captcha' => $try], ['captcha' => 'captcha']);
 
         $this->assertTrue($validator->fails());
     }
@@ -68,21 +56,16 @@ class CaptchaValidationTest extends IntegrationTest
         $allowedFailures = 2;
         $this->setConfig('allowed_failures', $allowedFailures);
 
-        $startCode = Captcha::getVerificationCode();
+        $startCode = Captcha::code();
 
         for ($i = 0; $i < $allowedFailures; $i++) {
-            $this->assertEquals($startCode, Captcha::getVerificationCode());
+            $this->assertEquals($startCode, Captcha::code());
 
-            $validator = Validator::make([
-                'captcha' => 'invalid-code',
-            ], [
-                'captcha' => 'captcha'
-            ]);
+            $validator = Validator::make(['captcha' => 'invalid-code'], ['captcha' => 'captcha']);
 
             $this->assertTrue($validator->fails());
         }
 
-        $this->assertNotEquals($startCode, Captcha::getVerificationCode());
-
+        $this->assertNotEquals($startCode, Captcha::code());
     }
 }

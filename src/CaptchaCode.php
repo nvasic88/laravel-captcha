@@ -4,16 +4,16 @@ namespace Nikazooz\LaravelCaptcha;
 
 use Illuminate\Support\Str;
 
-class VerificationCode
+class CaptchaCode
 {
     /**
-     * Generates a new verification code.
+     * Generates a CAPTCHA code.
      *
      * @param  int  $minLength
      * @param  int  $maxLength
      * @return string the generated verification code
      */
-    public static function generate($minLength = 6, $maxLength = 7)
+    public function generate($minLength = 6, $maxLength = 7)
     {
         if ($minLength > $maxLength) {
             $maxLength = $minLength;

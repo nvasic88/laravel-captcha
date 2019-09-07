@@ -3,21 +3,21 @@
 namespace Nikazooz\LaravelCaptcha\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Nikazooz\LaravelCaptcha\VerificationCode;
+use Nikazooz\LaravelCaptcha\CaptchaCode;
 
-class VerificationCodeTest extends TestCase
+class CaptchaCodeTest extends TestCase
 {
-    protected $verificationCode;
+    protected $captchaCode;
 
-    public function setUp()
+    protected function setUp(): void
     {
-        $this->verificationCode = new VerificationCode;
+        $this->captchaCode = new CaptchaCode();
     }
 
     /** @test */
     public function min_length_cannot_be_greater_than_max_length()
     {
-        $code = $this->verificationCode->generate(4, 3);
+        $code = $this->captchaCode->generate(4, 3);
 
         $this->assertEquals(4, strlen($code));
     }
@@ -25,7 +25,7 @@ class VerificationCodeTest extends TestCase
     /** @test */
     public function code_length_is_between_min_and_max_length()
     {
-        $code = $this->verificationCode->generate(4, 16);
+        $code = $this->captchaCode->generate(4, 16);
 
         $this->assertGreaterThanOrEqual(4, strlen($code));
         $this->assertLessThanOrEqual(16, strlen($code));

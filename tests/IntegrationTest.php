@@ -3,6 +3,8 @@
 namespace Nikazooz\LaravelCaptcha\Tests;
 
 use Orchestra\Testbench\TestCase;
+use Nikazooz\LaravelCaptcha\Facades\Captcha;
+use Nikazooz\LaravelCaptcha\CaptchaServiceProvider;
 
 abstract class IntegrationTest extends TestCase
 {
@@ -14,7 +16,7 @@ abstract class IntegrationTest extends TestCase
      */
     protected function getPackageProviders($app)
     {
-        return ['Nikazooz\LaravelCaptcha\CaptchaServiceProvider'];
+        return [CaptchaServiceProvider::class];
     }
 
     /**
@@ -26,7 +28,7 @@ abstract class IntegrationTest extends TestCase
     protected function getPackageAliases($app)
     {
         return [
-            'Captcha' => 'Nikazooz\LaravelCaptcha\Facades\Captcha',
+            'Captcha' => Captcha::class,
         ];
     }
 
@@ -41,7 +43,14 @@ abstract class IntegrationTest extends TestCase
         $app['config']->set('app.key', 'base64:UTyp33UhGolgzCK5CJmT+hNHcA+dJyp3+oINtX+VoPI=');
     }
 
-    protected function setConfig($key, $value)
+    /**
+     * Set Laravel Captcha config.
+     *
+     * @param  string  $key
+     * @param  mixed  $value
+     * @return void
+     */
+    protected function setConfig(string $key, $value)
     {
         config()->set("captcha.{$key}", $value);
     }

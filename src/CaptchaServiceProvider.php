@@ -28,7 +28,7 @@ class CaptchaServiceProvider extends ServiceProvider
      */
     protected function registerRoute()
     {
-        $this->app->make(Captcha::class)->registerRoute();
+        $this->app->make(CaptchaManager::class)->registerRoute();
     }
 
     /**
@@ -39,7 +39,7 @@ class CaptchaServiceProvider extends ServiceProvider
     protected function registerValidator()
     {
         Validator::extend('captcha', function ($attribute, $value) {
-            return $this->app->make(Captcha::class)->validate($value);
+            return $this->app->make(CaptchaManager::class)->validate($value);
         });
     }
 
@@ -76,11 +76,9 @@ class CaptchaServiceProvider extends ServiceProvider
      */
     protected function registerServices()
     {
-        $this->app->singleton(ImageGenerator::class);
+        $this->app->singleton(CaptchaCode::class);
 
-        $this->app->singleton(VerificationCode::class);
-
-        $this->app->singleton(Captcha::class);
+        $this->app->singleton(CaptchaManager::class);
     }
 
     /**
@@ -90,8 +88,19 @@ class CaptchaServiceProvider extends ServiceProvider
      */
     protected function configure()
     {
-        $this->mergeConfigFrom(
-           __DIR__.'/../config/captcha.php', 'captcha'
-       );
+        $this->mergeConfigFrom(__DIR__.'/../config/captcha.php', CaptchaManager::CONFIG);
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [
+            CaptchaCode::class,
+            CaptchaManager::class,
+        ];
     }
 }

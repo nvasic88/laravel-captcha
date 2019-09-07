@@ -10,15 +10,18 @@
         }
     ],
     "require": {
-        "illuminate/http": "~5.5",
-        "illuminate/routing": "~5.5",
-        "illuminate/session": "~5.5",
-        "illuminate/support": "~5.5",
-        "illuminate/validation": "~5.5"
+        "php": "^7.2",
+        "illuminate/contracts": "^6.0",
+        "illuminate/config": "^6.0",
+        "illuminate/http": "^6.0",
+        "illuminate/routing": "^6.0",
+        "illuminate/session": "^6.0",
+        "illuminate/support": "^6.0",
+        "illuminate/validation": "^6.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^3.5",
-        "phpunit/phpunit": "~6.0"
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
     },
     "suggest": {
         "ext-gd": "to use GD library based image processing.",
@@ -36,7 +39,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "1.*-dev"
         },
         "laravel": {
             "providers": [
