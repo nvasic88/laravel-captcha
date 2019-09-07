@@ -36,18 +36,16 @@ class CaptchaValidationTest extends IntegrationTest
 
         $code = Captcha::code();
 
-        $try = $this->startsWithUpper($code) ? strtolower($code) : strtoupper($code);
+        $try = $this->containsUppercase($code) ? strtolower($code) : strtoupper($code);
 
         $validator = Validator::make(['captcha' => $try], ['captcha' => 'captcha']);
 
         $this->assertTrue($validator->fails());
     }
 
-    protected function startsWithUpper($str)
+    protected function containsUppercase($str)
     {
-        $chr = mb_substr ($str, 0, 1, "UTF-8");
-
-        return mb_strtolower($chr, "UTF-8") != $chr;
+        return preg_match('/[A-Z]/', $str);
     }
 
     /** @test */
