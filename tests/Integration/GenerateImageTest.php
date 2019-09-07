@@ -10,7 +10,7 @@ class GenerateImageTest extends IntegrationTest
     /** @test */
     public function can_render_captcha_image_when_requested_using_gd()
     {
-        $this->setConfig('default', 'gd');
+        $this->setConfig('driver', 'gd');
 
         if (! Captcha::isAvailable()) {
             $this->markTestSkipped(
@@ -34,7 +34,7 @@ class GenerateImageTest extends IntegrationTest
     /** @test */
     public function can_render_captcha_image_when_requested_using_imagick()
     {
-        $this->setConfig('default', 'imagick');
+        $this->setConfig('driver', 'imagick');
 
         if (! Captcha::isAvailable()) {
             $this->markTestSkipped(
@@ -58,7 +58,7 @@ class GenerateImageTest extends IntegrationTest
     /** @test */
     public function can_configure_image_width_and_height()
     {
-        $this->setConfig('default', 'gd');
+        $this->setConfig('driver', 'gd');
 
         if (! Captcha::isAvailable()) {
             $this->markTestSkipped(
