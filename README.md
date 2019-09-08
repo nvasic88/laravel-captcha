@@ -4,10 +4,10 @@ Package for Laravel to easily generate and validate CAPTCHA.
 
 ## Requirements
 
-| Version | Laravel | Status        |
-| ------- | ------- | ------------- |
-| 0.1.*   | ^5.5    | Not supported |
-| 1.*     | ^6.0    | Supported     |
+| Version | PHP   | Laravel | Status        |
+| ------- | ----- | ------- | ------------- |
+| 0.1.*   | >=7.0 | ^5.5    | Not supported |
+| 1.*     | >=7.2 | ^6.0    | Supported     |
 
 ImageMagick or GD extension for PHP is required to use with included drivers.
 
