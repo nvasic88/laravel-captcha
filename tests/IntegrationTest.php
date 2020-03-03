@@ -2,9 +2,9 @@
 
 namespace Nikazooz\LaravelCaptcha\Tests;
 
-use Orchestra\Testbench\TestCase;
-use Nikazooz\LaravelCaptcha\Facades\Captcha;
 use Nikazooz\LaravelCaptcha\CaptchaServiceProvider;
+use Nikazooz\LaravelCaptcha\Facades\Captcha;
+use Orchestra\Testbench\TestCase;
 
 abstract class IntegrationTest extends TestCase
 {

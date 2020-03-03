@@ -4,11 +4,11 @@ namespace Nikazooz\LaravelCaptcha;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Manager;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
-use Nikazooz\LaravelCaptcha\ImageGenerators\ImageGenerator;
-use Nikazooz\LaravelCaptcha\ImageGenerators\GdImageGenerator;
 use Nikazooz\LaravelCaptcha\Http\Controllers\CaptchaController;
+use Nikazooz\LaravelCaptcha\ImageGenerators\GdImageGenerator;
+use Nikazooz\LaravelCaptcha\ImageGenerators\ImageGenerator;
 use Nikazooz\LaravelCaptcha\ImageGenerators\ImagickImageGenerator;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class CaptchaManager extends Manager
 {
@@ -32,7 +32,7 @@ class CaptchaManager extends Manager
      */
     public function createGdDriver()
     {
-        $driver= new GdImageGenerator($this->config);
+        $driver = new GdImageGenerator($this->config);
 
         if (! $driver->isAvailable()) {
             throw new \Exception('"gd" driver for Laravel Captcha requires GD extension for PHP to be installed');

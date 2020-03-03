@@ -33,12 +33,12 @@ class ImagickImageGenerator extends BaseImageGenerator implements ImageGenerator
         $padding = $this->config('padding');
         $offset = $this->config('offset');
 
-        $backgroundColor = new \ImagickPixel('#' . str_pad(
-            dechex($this->config('background_color')
-        ), 6, 0, STR_PAD_LEFT));
-        $textColor = new \ImagickPixel('#' . str_pad(
-            dechex($this->config('text_color')
-        ), 6, 0, STR_PAD_LEFT));
+        $backgroundColor = new \ImagickPixel(
+            '#'.str_pad(dechex($this->config('background_color')), 6, 0, STR_PAD_LEFT)
+        );
+        $textColor = new \ImagickPixel(
+            '#'.str_pad(dechex($this->config('text_color')), 6, 0, STR_PAD_LEFT)
+        );
 
         $image = new \Imagick();
         $image->newImage($width, $height, $backgroundColor);
@@ -67,12 +67,12 @@ class ImagickImageGenerator extends BaseImageGenerator implements ImageGenerator
         $draw->setStrokeColor($textColor);
 
         // Add lines for noise.
-        for($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             $draw->line(0, mt_rand() % $height, $width, mt_rand() % $height);
         }
 
         // Add dots for noise.
-        for($i = 0; $i < $width * $height * 0.4; $i++) {
+        for ($i = 0; $i < $width * $height * 0.4; $i++) {
             $draw->point(mt_rand() % $width, mt_rand() % $height);
         }
 

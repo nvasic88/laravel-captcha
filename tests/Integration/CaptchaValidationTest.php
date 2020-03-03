@@ -2,7 +2,6 @@
 
 namespace Nikazooz\LaravelCaptcha\Tests\Integration;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Nikazooz\LaravelCaptcha\Facades\Captcha;
 use Nikazooz\LaravelCaptcha\Tests\IntegrationTest;

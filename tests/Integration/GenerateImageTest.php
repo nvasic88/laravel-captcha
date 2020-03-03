@@ -14,7 +14,7 @@ class GenerateImageTest extends IntegrationTest
 
         if (! Captcha::isAvailable()) {
             $this->markTestSkipped(
-              'The GD extension is not available.'
+                'The GD extension is not available.'
             );
         }
 
@@ -38,7 +38,7 @@ class GenerateImageTest extends IntegrationTest
 
         if (! Captcha::isAvailable()) {
             $this->markTestSkipped(
-              'The Imagick extension is not available.'
+                'The Imagick extension is not available.'
             );
         }
 
@@ -62,7 +62,7 @@ class GenerateImageTest extends IntegrationTest
 
         if (! Captcha::isAvailable()) {
             $this->markTestSkipped(
-              'The GD extension is not available.'
+                'The GD extension is not available.'
             );
         }
 

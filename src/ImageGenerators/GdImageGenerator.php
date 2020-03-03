@@ -70,12 +70,12 @@ class GdImageGenerator extends BaseImageGenerator implements ImageGenerator
         }
 
         // Add lines for noise.
-        for($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             imageline($image, 0, mt_rand() % $height, $width, mt_rand() % $height, $textColor);
         }
 
         // Add dots for noise.
-        for($i = 0; $i < $width * $height * 0.4; $i++) {
+        for ($i = 0; $i < $width * $height * 0.4; $i++) {
             imagesetpixel($image, mt_rand() % $width, mt_rand() % $height, $textColor);
         }
 
