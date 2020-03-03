@@ -16,7 +16,7 @@ class CaptchaValidationTest extends IntegrationTest
         $validator = Validator::make(['captcha' => $code], ['captcha' => 'captcha']);
 
         $this->assertNotEmpty($code);
-        $this->assertTrue($validator->passes());
+        $this->assertFalse($validator->fails());
     }
 
     /** @test */
