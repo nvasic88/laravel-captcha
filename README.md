@@ -7,7 +7,7 @@ Package for Laravel to easily generate and validate CAPTCHA.
 | Version | PHP   | Laravel | Status        |
 | ------- | ----- | ------- | ------------- |
 | 0.1.*   | >=7.0 | ^5.5    | Not supported |
-| 1.*     | >=7.2 | ^6.0    | Supported     |
+| 1.*     | >=7.2 | >=6.0   | Supported     |
 
 ImageMagick or GD extension for PHP is required to use with included drivers.
 
@@ -31,7 +31,7 @@ Reading the config file is the best way to find out what can be configured.
 
 ## Usage
 
-Easily get URL at witch CAPTCHA image is available using the facade:
+Easily get URL at which CAPTCHA image is available using the facade:
 
 ```php
 <?php
