@@ -110,7 +110,7 @@ class CaptchaManager extends Manager
      */
     protected function generateCode()
     {
-        return $this->app->make(CaptchaCode::class)->generate(
+        return $this->container()->make(CaptchaCode::class)->generate(
             $this->config('min_length'),
             $this->config('max_length')
         );
@@ -166,7 +166,7 @@ class CaptchaManager extends Manager
 
     protected function session()
     {
-        return $this->app->make('session');
+        return $this->container()->make('session');
     }
 
     /**
@@ -176,7 +176,7 @@ class CaptchaManager extends Manager
      */
     public function url()
     {
-        return $this->app->make('url')->route(static::ROUTE_NAME, ['v' => uniqid()]);
+        return $this->container()->make('url')->route(static::ROUTE_NAME, ['v' => uniqid()]);
     }
 
     /**
@@ -186,9 +186,23 @@ class CaptchaManager extends Manager
      */
     public function registerRoute()
     {
-        $this->app->make('router')->get(
+        $this->container()->make('router')->get(
             $this->config('route'),
             [CaptchaController::class, 'show']
         )->name(static::ROUTE_NAME)->middleware('web');
+    }
+
+    /**
+     * Get the Container instance.
+     *
+     * We try to keep compatibility between Laravel 8 and previous versions.
+     * Laravel 8 drops "app" property in favour of "container".
+     * @see https://laravel.com/docs/8.x/upgrade
+     *
+     * @return \Illuminate\Contracts\Container\Container
+     */
+    protected function container()
+    {
+        return $this->container ?? $this->app;
     }
 }
