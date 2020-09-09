@@ -8,7 +8,7 @@ use Nikazooz\LaravelCaptcha\Tests\IntegrationTest;
 class GenerateImageTest extends IntegrationTest
 {
     /** @test */
-    public function can_render_captcha_image_when_requested_using_gd()
+    public function can_generate_captcha_image_when_requested_using_gd()
     {
         $this->setConfig('driver', 'gd');
 
@@ -32,7 +32,7 @@ class GenerateImageTest extends IntegrationTest
     }
 
     /** @test */
-    public function can_render_captcha_image_when_requested_using_imagick()
+    public function can_generate_captcha_image_when_requested_using_imagick()
     {
         $this->setConfig('driver', 'imagick');
 
