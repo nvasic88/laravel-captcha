@@ -1,8 +1,8 @@
 <?php
 
-namespace Nikazooz\LaravelCaptcha\ImageGenerators;
+namespace nvasic88\LaravelCaptcha\ImageGenerators;
 
-use Nikazooz\LaravelCaptcha\CaptchaManager;
+use nvasic88\LaravelCaptcha\CaptchaManager;
 
 trait ReadsImageConfig
 {

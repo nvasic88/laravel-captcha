@@ -1,10 +1,10 @@
 <?php
 
-namespace Nikazooz\LaravelCaptcha\Http\Controllers;
+namespace nvasic88\LaravelCaptcha\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Nikazooz\LaravelCaptcha\Facades\Captcha;
+use nvasic88\LaravelCaptcha\Facades\Captcha;
 
 class CaptchaController extends Controller
 {

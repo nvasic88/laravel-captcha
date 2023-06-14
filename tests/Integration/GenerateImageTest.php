@@ -1,9 +1,9 @@
 <?php
 
-namespace Nikazooz\LaravelCaptcha\Tests\Integration;
+namespace nvasic88\LaravelCaptcha\Tests\Integration;
 
-use Nikazooz\LaravelCaptcha\Facades\Captcha;
-use Nikazooz\LaravelCaptcha\Tests\IntegrationTest;
+use nvasic88\LaravelCaptcha\Facades\Captcha;
+use nvasic88\LaravelCaptcha\Tests\IntegrationTest;
 
 class GenerateImageTest extends IntegrationTest
 {

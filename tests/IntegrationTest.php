@@ -1,9 +1,9 @@
 <?php
 
-namespace Nikazooz\LaravelCaptcha\Tests;
+namespace nvasic88\LaravelCaptcha\Tests;
 
-use Nikazooz\LaravelCaptcha\CaptchaServiceProvider;
-use Nikazooz\LaravelCaptcha\Facades\Captcha;
+use nvasic88\LaravelCaptcha\CaptchaServiceProvider;
+use nvasic88\LaravelCaptcha\Facades\Captcha;
 use Orchestra\Testbench\TestCase;
 
 abstract class IntegrationTest extends TestCase

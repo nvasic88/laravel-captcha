@@ -1,8 +1,8 @@
 <?php
 
-namespace Nikazooz\LaravelCaptcha\Tests\Unit;
+namespace nvasic88\LaravelCaptcha\Tests\Unit;
 
-use Nikazooz\LaravelCaptcha\CaptchaCode;
+use nvasic88\LaravelCaptcha\CaptchaCode;
 use PHPUnit\Framework\TestCase;
 
 class CaptchaCodeTest extends TestCase

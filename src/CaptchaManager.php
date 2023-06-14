@@ -1,13 +1,13 @@
 <?php
 
-namespace Nikazooz\LaravelCaptcha;
+namespace nvasic88\LaravelCaptcha;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Manager;
-use Nikazooz\LaravelCaptcha\Http\Controllers\CaptchaController;
-use Nikazooz\LaravelCaptcha\ImageGenerators\GdImageGenerator;
-use Nikazooz\LaravelCaptcha\ImageGenerators\ImageGenerator;
-use Nikazooz\LaravelCaptcha\ImageGenerators\ImagickImageGenerator;
+use nvasic88\LaravelCaptcha\Http\Controllers\CaptchaController;
+use nvasic88\LaravelCaptcha\ImageGenerators\GdImageGenerator;
+use nvasic88\LaravelCaptcha\ImageGenerators\ImageGenerator;
+use nvasic88\LaravelCaptcha\ImageGenerators\ImagickImageGenerator;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class CaptchaManager extends Manager

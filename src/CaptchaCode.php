@@ -1,6 +1,6 @@
 <?php
 
-namespace Nikazooz\LaravelCaptcha;
+namespace nvasic88\LaravelCaptcha;
 
 use Illuminate\Support\Str;
 

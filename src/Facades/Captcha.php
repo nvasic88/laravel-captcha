@@ -1,9 +1,9 @@
 <?php
 
-namespace Nikazooz\LaravelCaptcha\Facades;
+namespace nvasic88\LaravelCaptcha\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use Nikazooz\LaravelCaptcha\CaptchaManager;
+use nvasic88\LaravelCaptcha\CaptchaManager;
 
 class Captcha extends Facade
 {

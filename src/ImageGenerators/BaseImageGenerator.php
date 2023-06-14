@@ -1,6 +1,6 @@
 <?php
 
-namespace Nikazooz\LaravelCaptcha\ImageGenerators;
+namespace nvasic88\LaravelCaptcha\ImageGenerators;
 
 use Illuminate\Contracts\Config\Repository;
 
