@@ -1,3 +1,7 @@
+# Temporary cloned project
+
+Project is updated clone of https://github.com/nikazooz/laravel-captcha to match Laravel 9 and 10 dependency for Biologer project update
+
 # Laravel Captcha
 
 Package for Laravel to easily generate and validate CAPTCHA.

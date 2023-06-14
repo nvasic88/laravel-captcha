@@ -1,5 +1,5 @@
 {
-    "name": "nikazooz/laravel-captcha",
+    "name": "nvasic88/laravel-captcha",
     "description": "Laravel package to generate and validate CAPTCHA.",
     "keywords": ["laravel", "captcha"],
     "license": "MIT",
@@ -29,12 +29,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Nikazooz\\LaravelCaptcha\\": "src/"
+            "nvasic88\\LaravelCaptcha\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Nikazooz\\LaravelCaptcha\\Tests\\": "tests/"
+            "nvasic88\\LaravelCaptcha\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -43,10 +43,10 @@
         },
         "laravel": {
             "providers": [
-                "Nikazooz\\LaravelCaptcha\\CaptchaServiceProvider"
+                "nvasic88\\LaravelCaptcha\\CaptchaServiceProvider"
             ],
             "aliases": {
-                "Captcha": "Nikazooz\\LaravelCaptcha\\Facades\\Captcha"
+                "Captcha": "nvasic88\\LaravelCaptcha\\Facades\\Captcha"
             }
         }
     },
